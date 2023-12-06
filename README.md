@@ -8,19 +8,19 @@ This project utilizes the GLFW library in order to make use of the OpenGL render
 
 In general, the program will take the user's cursor location as the input to the reflection simulation, and (depending on settings) will render and display the resulting group of possible reflections in real time. In the most basic form it will look like this: 
 
-[BASIC POINT, LOW DEPTH, MIRRORS]
+![](https://github.com/AlexFilipps/Reflection-Groups/blob/main/gifs/point_1.gif)
 
 Here we draw one point at the user's cursor and use it as our input, and the solid white lines represent our three mirrors. Here the recursive depth has been set to 2, so the point is reflected once in each mirror, and then each of those points is reflected again in every mirror. Two reflection steps, so a “depth” of two.
 
-[BASIC POINT, HIGH DEPTH]
+![](https://github.com/AlexFilipps/Reflection-Groups/blob/main/gifs/point_2.gif)
 
 Here is an example where our depth has been set substantially higher. This has a depth of 18, and is computing 786430 points. Not all of these points are rendered as some fall too far outside our window, however each point’s location still needs to be computed in case it does. Note that the mirrors are still “there” for the purpose of reflections. Their renderer has simply been turned off so they are not visible.
 
 Since rendering this many points can cause the image to become somewhat busy, there is an alternate shader set up to render out points as a density map instead. Here brighter areas represent a higher density of points in that region, and darker areas a lower density. While this does help see the emergent patterns from our reflections a bit better, the amount of time it takes to compute these density regions is a good amount higher than when just rendering individual points. For this reason the resolution of the window was lowered somewhat for these examples.
 
-[DENSITY, B&W] [DENSITY, COLOUR]
+![](https://github.com/AlexFilipps/Reflection-Groups/blob/main/gifs/dense_1.gif) ![](https://github.com/AlexFilipps/Reflection-Groups/blob/main/gifs/dense_2.gif)
 
 There is one more type of rendering that this application supports and that is a trailing effect. What this does is adds a slow fading trail behind each of the rendered points. This is helpful for visualizing how movement of the initial point with the cursor causes movement in groups of reflected points.
 
-[TRAILS, COLOUR]
+![](https://github.com/AlexFilipps/Reflection-Groups/blob/main/gifs/trail_1.gif) ![](https://github.com/AlexFilipps/Reflection-Groups/blob/main/gifs/trail_2.gif)
 
