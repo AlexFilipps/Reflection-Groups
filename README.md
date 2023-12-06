@@ -14,7 +14,7 @@ Here we draw one point at the user's cursor and use it as our input, and the sol
 
 [BASIC POINT, HIGH DEPTH]
 
-Here is an example where our depth has been set substantially higher. This has a depth of DEPTH, and is computing POINTS points. Not all of these points are rendered as some fall too far outside our window, however each point’s location still needs to be computed in case it does. Note that the mirrors are still “there” for the purpose of reflections. Their renderer has simply been turned off so they are not visible.
+Here is an example where our depth has been set substantially higher. This has a depth of 18, and is computing 786430 points. Not all of these points are rendered as some fall too far outside our window, however each point’s location still needs to be computed in case it does. Note that the mirrors are still “there” for the purpose of reflections. Their renderer has simply been turned off so they are not visible.
 
 Since rendering this many points can cause the image to become somewhat busy, there is an alternate shader set up to render out points as a density map instead. Here brighter areas represent a higher density of points in that region, and darker areas a lower density. While this does help see the emergent patterns from our reflections a bit better, the amount of time it takes to compute these density regions is a good amount higher than when just rendering individual points. For this reason the resolution of the window was lowered somewhat for these examples.
 
@@ -24,6 +24,3 @@ There is one more type of rendering that this application supports and that is a
 
 [TRAILS, COLOUR]
 
-Of course we can also just turn off frame clearing altogether and create some really interesting designs just by using our cursor like a pen.
-
-[POINTS, RAINBOW, NO FRAME CLEAR]
